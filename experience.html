@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Test Drive — BMW Design Study</title>
+<meta name="description" content="Book a test drive in this design study: choose a model, a date, and how to reach you. Demo form — submissions are not sent anywhere.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="study-strip">Unofficial <b>design study</b> — built for learning. Not affiliated with BMW AG. This demo form stores nothing and sends nothing.</div>
+
+<nav class="site-nav">
+  <a class="wordmark" href="index.html">BMW<small>DESIGN STUDY</small></a>
+  <div class="nav-links">
+    <a href="models.html">Models</a>
+    <a href="electric.html">Electric</a>
+    <a href="experience.html" class="active">Experience</a>
+    <a class="cta" href="experience.html">Book a test drive</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="page-head">
+    <p class="label blue">The Experience</p>
+    <h1>Judge it from the driver's seat.</h1>
+    <p>Thirty minutes. Your roads. A product genius rides along only if you want one. This is the close of every argument on this site — so the form asks for exactly what a booking needs, and nothing else.</p>
+  </header>
+
+  <section style="margin-top:56px">
+    <div class="form-grid">
+      <div>
+        <div class="step-row"><div class="n">1</div><div><h3>Choose the car</h3><p>Tell us which model and when. If the car is out, we say so and offer the nearest date — we don't quietly swap your booking.</p></div></div>
+        <div class="step-row"><div class="n">2</div><div><h3>We confirm within one working day</h3><p>By your chosen channel, with the time, the place, and the name of the person meeting you. No drip campaign afterwards.</p></div></div>
+        <div class="step-row"><div class="n">3</div><div><h3>Drive</h3><p>Bring your licence. The route includes a stretch where the car can make its case — motorway or hills, your call.</p></div></div>
+        <figure style="margin-top:36px; border:1px solid var(--hairline); padding:10px; background:var(--surface-card)">
+          <img src="img/interior.jpg" alt="BMW cockpit in cognac leather" style="width:100%; height:300px; object-fit:cover">
+          <figcaption style="font-size:12px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); padding-top:10px; font-weight:700">The seat that matters — driver-oriented cockpit</figcaption>
+        </figure>
+      </div>
+
+      <div>
+        <form id="tdForm" novalidate>
+          <div class="field">
+            <label for="fName">Full name</label>
+            <input type="text" id="fName" name="name" autocomplete="name" placeholder="Your name">
+            <p class="err">Please tell us your name.</p>
+          </div>
+          <div class="field">
+            <label for="fContact">Email or phone</label>
+            <input type="text" id="fContact" name="contact" autocomplete="email" placeholder="you@example.com or +880…">
+            <p class="err">Enter a valid email, or a phone number with at least 7 digits.</p>
+          </div>
+          <div class="field">
+            <label for="fModel">Model</label>
+            <select id="fModel" name="model">
+              <option value="">Choose a model…</option>
+              <option>The M4 Competition</option>
+              <option>The M4 CSL</option>
+              <option>The i4 eDrive40</option>
+              <option>The iX xDrive50</option>
+              <option>Not sure yet — advise me</option>
+            </select>
+            <p class="err">Choose the car you'd like to drive.</p>
+          </div>
+          <div class="field">
+            <label for="fDate">Preferred date</label>
+            <input type="date" id="fDate" name="date">
+            <p class="err">Pick a date from today onwards.</p>
+          </div>
+          <div class="field consent">
+            <input type="checkbox" id="fConsent">
+            <label for="fConsent">Contact me about this booking only. I understand this design-study demo does not store or send my details anywhere.</label>
+          </div>
+          <p class="err" id="consentErr" style="display:none; color:#B3261E; font-size:14px; margin:-12px 0 16px">Please tick the consent box so we may contact you.</p>
+          <button class="btn btn-primary" type="submit" style="width:100%">Request my test drive</button>
+          <p style="font-size:13.5px; color:var(--muted); margin-top:14px">Demo form: validation runs in your browser; nothing is transmitted or stored. A real booking flow would follow the <a href="privacy.html" style="color:var(--voltage); font-weight:700">privacy policy</a>.</p>
+        </form>
+        <div class="form-success" id="formSuccess" role="status">
+          <h3>Request received.</h3>
+          <p>Your <b id="successModel">car</b> drive is requested. In a live service, confirmation would arrive within one working day with a time, a place, and a name. In this study, your details went nowhere — exactly as the consent said.</p>
+          <a class="more-link" href="models.html">Back to the range →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="sub-foot">
+    <div>
+      <a class="wordmark" href="index.html" style="font-size:22px">BMW<small>DESIGN STUDY</small></a>
+      <p class="credits" style="margin-top:12px; color:var(--muted)">Unofficial design study by Wafa for Tiyan Degital. Not affiliated with BMW AG. Photography: Wikimedia Commons (CC-licensed) — credits in credits.json.</p>
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="models.html">Models</a>
+      <a href="electric.html">Electric</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </footer>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

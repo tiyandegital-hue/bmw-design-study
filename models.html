@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Range — BMW Design Study</title>
+<meta name="description" content="The model range in this design study: M cars, electric i models and the wider line-up, with published specifications where shown.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="study-strip">Unofficial <b>design study</b> — built for learning. Not affiliated with BMW AG. Specifications cited from BMW press material, checked Oct 2026.</div>
+
+<nav class="site-nav">
+  <a class="wordmark" href="index.html">BMW<small>DESIGN STUDY</small></a>
+  <div class="nav-links">
+    <a href="models.html" class="active">Models</a>
+    <a href="electric.html">Electric</a>
+    <a href="experience.html">Experience</a>
+    <a class="cta" href="experience.html">Book a test drive</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="page-head">
+    <p class="label blue">The range</p>
+    <h1>Choose your weapon.</h1>
+    <p>Filtered the way buyers actually think: by intent. M for the track-minded, i for the electric, X for the altitude. Figures shown are published specifications.</p>
+  </header>
+
+  <section style="margin-top:52px">
+    <div class="chips" role="group" aria-label="Filter models">
+      <button class="chip active" data-filter="all">All models</button>
+      <button class="chip" data-filter="m">M</button>
+      <button class="chip" data-filter="electric">Electric</button>
+      <button class="chip" data-filter="suv">SUV</button>
+    </div>
+
+    <div class="cards">
+      <article class="card" data-cat="m" data-reveal>
+        <div class="card-img"><img src="img/hero-m4.jpg" alt="BMW M4 Competition in São Paulo Yellow"></div>
+        <div class="card-body">
+          <span class="card-tag">M · Coupé</span>
+          <h3>The M4 Competition</h3>
+          <p>M TwinPower Turbo inline six, M xDrive with a rear-biased heart, and the widest grin in the range.</p>
+          <div class="spec-row">
+            <div><b>530 hp</b><span>Power</span></div>
+            <div><b>3.5 s</b><span>0–100 km/h</span></div>
+            <div><b>650 Nm</b><span>Torque</span></div>
+          </div>
+          <a class="more-link" href="experience.html">Drive it →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="m" data-reveal>
+        <div class="card-img"><img src="img/model-m4.jpg" alt="BMW M4 CSL coupé"></div>
+        <div class="card-body">
+          <span class="card-tag">M · Limited</span>
+          <h3>The M4 CSL</h3>
+          <p>Coupé. Sport. Lightweight. Carbon where steel used to be, rear-wheel drive, and a production run that ended before most people heard about it.</p>
+          <div class="spec-row">
+            <div><b>Inline six</b><span>S58 engine</span></div>
+            <div><b>RWD</b><span>Drive</span></div>
+            <div><b>Limited</b><span>Production</span></div>
+          </div>
+          <a class="more-link" href="experience.html">Register interest →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="electric" data-reveal>
+        <div class="card-img"><img src="img/model-i4.jpg" alt="BMW i4 electric gran coupé"></div>
+        <div class="card-body">
+          <span class="card-tag">Electric · Gran Coupé</span>
+          <h3>The i4 eDrive40</h3>
+          <p>Single rear motor, classic proportions, and the longest legs of the electric coupés.</p>
+          <div class="spec-row">
+            <div><b>340 hp</b><span>Power</span></div>
+            <div><b>590 km</b><span>WLTP up to</span></div>
+            <div><b>200 kW</b><span>DC charging</span></div>
+          </div>
+          <a class="more-link" href="electric.html">The electric story →</a>
+        </div>
+      </article>
+      <article class="card" data-cat="electric suv" data-reveal>
+        <div class="card-img"><img src="img/model-ix.jpg" alt="BMW iX electric flagship"></div>
+        <div class="card-body">
+          <span class="card-tag">Electric · SUV</span>
+          <h3>The iX xDrive50</h3>
+          <p>The flagship Sports Activity Vehicle: dual motors, 111.5 kWh, and a lounge where the cabin should be.</p>
+          <div class="spec-row">
+            <div><b>523 hp</b><span>Power</span></div>
+            <div><b>630 km</b><span>WLTP up to</span></div>
+            <div><b>4.6 s</b><span>0–100 km/h</span></div>
+          </div>
+          <a class="more-link" href="electric.html">The electric story →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head" data-reveal>
+      <h2>The wider range</h2>
+      <p>The full line-up, as a buyer's shortlist. One line each — the way a decision actually gets made.</p>
+    </div>
+    <div class="range-rows">
+      <div class="range-row" data-cat="m"><span class="r-name">The M2 Coupé</span><span class="r-desc">The smallest M. The purest argument.</span><a href="experience.html">Drive it →</a></div>
+      <div class="range-row" data-cat="m"><span class="r-name">The M3 Touring</span><span class="r-desc">M power, estate practicality, school-run menace.</span><a href="experience.html">Drive it →</a></div>
+      <div class="range-row" data-cat="m suv"><span class="r-name">The XM</span><span class="r-desc">The first standalone M since the M1. Electrified V8.</span><a href="experience.html">Drive it →</a></div>
+      <div class="range-row" data-cat="electric"><span class="r-name">The i7</span><span class="r-desc">The electric flagship sedan. Cinema in the back, silence in front.</span><a href="electric.html">Electric →</a></div>
+      <div class="range-row" data-cat="suv"><span class="r-name">The X5</span><span class="r-desc">The original Sports Activity Vehicle. Still the boss.</span><a href="experience.html">Drive it →</a></div>
+      <div class="range-row" data-cat="suv"><span class="r-name">The X7</span><span class="r-desc">Seven seats, flagship manners.</span><a href="experience.html">Drive it →</a></div>
+      <div class="range-row" data-cat="all"><span class="r-name">The 7 Series</span><span class="r-desc">The luxury sedan, combustion or electric.</span><a href="experience.html">Drive it →</a></div>
+      <div class="range-row" data-cat="all"><span class="r-name">The Z4</span><span class="r-desc">The roadster. Roof down, argument over.</span><a href="experience.html">Drive it →</a></div>
+    </div>
+  </section>
+
+  <footer class="sub-foot">
+    <div>
+      <a class="wordmark" href="index.html" style="font-size:22px">BMW<small>DESIGN STUDY</small></a>
+      <p class="credits" style="margin-top:12px; color:var(--muted)">Unofficial design study by Wafa for Tiyan Degital. Not affiliated with BMW AG. Photography: Wikimedia Commons (CC-licensed) — credits in credits.json.</p>
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="electric.html">Electric</a>
+      <a href="experience.html">Experience</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </footer>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

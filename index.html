@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMW — Design Study · The M4 Competition</title>
+<meta name="description" content="An unofficial design study of a BMW web experience: a live 3D hero, the model range, the electric i models, and a test-drive booking. Built for learning; not affiliated with BMW AG.">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/addons/" } }
+</script>
+</head>
+<body>
+
+<div id="preloader" aria-hidden="true">
+  <div class="pl-word">BMW</div>
+  <div class="pl-bar"><i></i><i></i><i></i></div>
+  <div class="pl-num">0%</div>
+</div>
+<script>setTimeout(function(){if(!window.__plDone){var p=document.getElementById('preloader');if(p)p.style.display='none';}},4500);</script>
+
+<div class="study-strip">Unofficial <b>design study</b> — built for learning. Not affiliated with BMW AG. Specifications cited from BMW press material, checked Oct 2026.</div>
+
+<nav class="site-nav">
+  <a class="wordmark" href="index.html">BMW<small>DESIGN STUDY</small></a>
+  <div class="nav-links">
+    <a href="models.html">Models</a>
+    <a href="electric.html">Electric</a>
+    <a href="experience.html">Experience</a>
+    <a class="cta" href="experience.html">Book a test drive</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="label">The M4 Competition · M xDrive</p>
+    <h1>
+      <span class="line"><span>Power is</span></span>
+      <span class="line"><span>a decision.</span></span>
+    </h1>
+    <p class="hero-sub">No adjectives. The numbers below are the argument — and the car under them turns at your hand. Choose a paint. Then book the drive and judge it from the seat that matters.</p>
+    <div class="hero-spec">
+      <b>530 hp</b><span class="dot"></span>
+      <b>3.5 s</b><span>0–100 km/h</span><span class="dot"></span>
+      <b>650 Nm</b>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="experience.html">Book a test drive</a>
+      <a class="btn btn-outline-light" href="models.html">Explore the range</a>
+    </div>
+  </div>
+
+  <div class="stage">
+    <img class="stage-poster" id="stagePoster" src="img/model-m4.jpg" alt="BMW M4 CSL — shown if the 3D stage cannot start">
+    <div class="stage-fallback" id="stageFallback">Preparing the 3D stage…</div>
+    <canvas id="gl" aria-label="Interactive 3D study sculpture of a coupé — drag to rotate"></canvas>
+  </div>
+  <script>setTimeout(function(){if(!window.__glReady){var p=document.getElementById('stagePoster');if(p)p.style.opacity='.45';var f=document.getElementById('stageFallback');if(f)f.style.display='none';}},7000);</script>
+  <div class="stage-ui">
+    <div class="paint-name">Paint — drag the car, or finish it:<b id="paintName">Portimao Blue metallic</b></div>
+    <div class="swatches" role="group" aria-label="Choose paint">
+      <span class="sw-label">Paint</span>
+      <button class="swatch active" data-name="Portimao Blue metallic" style="background:#1B5DB5" onclick="setPaint(0x1B5DB5,'Portimao Blue metallic')" aria-label="Portimao Blue metallic"></button>
+      <button class="swatch" data-name="São Paulo Yellow" style="background:#C6D92E" onclick="setPaint(0xC6D92E,'São Paulo Yellow')" aria-label="São Paulo Yellow"></button>
+      <button class="swatch" data-name="Alpine White" style="background:#EDEEF0" onclick="setPaint(0xEDEEF0,'Alpine White')" aria-label="Alpine White"></button>
+      <button class="swatch" data-name="Black Sapphire metallic" style="background:#14161A" onclick="setPaint(0x14161A,'Black Sapphire metallic')" aria-label="Black Sapphire metallic"></button>
+    </div>
+    <div class="drag-hint">Drag to rotate</div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat"><b><span data-count="530">530</span></b><span>hp — M TwinPower Turbo inline six</span></div>
+    <div class="stat"><b><span data-count="3.5" data-decimals="1">3.5</span><small> s</small></b><span>0–100 km/h, launch control</span></div>
+    <div class="stat"><b><span data-count="650">650</span></b><span>Nm of torque, 2,750–5,730 rpm</span></div>
+    <div class="stat"><b><span data-count="290">290</span></b><span>km/h with the M Driver's Package</span></div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>THE M4 <i>·</i></span><span>THE i4 <i>·</i></span><span>THE iX <i>·</i></span><span>THE XM <i>·</i></span><span>THE i7 <i>·</i></span><span>THE M2 <i>·</i></span>
+    <span>THE M4 <i>·</i></span><span>THE i4 <i>·</i></span><span>THE iX <i>·</i></span><span>THE XM <i>·</i></span><span>THE i7 <i>·</i></span><span>THE M2 <i>·</i></span>
+  </div>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="sec-head" data-reveal>
+      <p class="label blue">Featured</p>
+      <h2>Three arguments, three silhouettes.</h2>
+      <p>An M coupé, an electric gran coupé, and the electric flagship. Every figure below is published specification — no concept numbers, no rounding up.</p>
+    </div>
+    <div class="cards">
+      <article class="card" data-reveal>
+        <div class="card-img"><img src="img/hero-m4.jpg" alt="BMW M4 Competition in São Paulo Yellow, front three-quarter"></div>
+        <div class="card-body">
+          <span class="card-tag">M · Petrol</span>
+          <h3>The M4 Competition</h3>
+          <p>The benchmark. Rear-biased M xDrive, an active differential, and a straight six that revs like it means it.</p>
+          <div class="spec-row">
+            <div><b>530 hp</b><span>Power</span></div>
+            <div><b>3.5 s</b><span>0–100 km/h</span></div>
+            <div><b>650 Nm</b><span>Torque</span></div>
+          </div>
+          <a class="more-link" href="models.html">The M4 in the range →</a>
+        </div>
+      </article>
+      <article class="card" data-reveal>
+        <div class="card-img"><img src="img/model-i4.jpg" alt="BMW i4 electric gran coupé"></div>
+        <div class="card-body">
+          <span class="card-tag">Electric · Gran Coupé</span>
+          <h3>The i4 eDrive40</h3>
+          <p>Electric, without the apology. A gran coupé silhouette, rear-wheel drive balance, and range that ends the argument.</p>
+          <div class="spec-row">
+            <div><b>340 hp</b><span>Power</span></div>
+            <div><b>590 km</b><span>Range, WLTP up to</span></div>
+            <div><b>5.7 s</b><span>0–100 km/h</span></div>
+          </div>
+          <a class="more-link" href="electric.html">The electric range →</a>
+        </div>
+      </article>
+      <article class="card" data-reveal>
+        <div class="card-img"><img src="img/model-ix.jpg" alt="BMW iX electric flagship SUV"></div>
+        <div class="card-body">
+          <span class="card-tag">Electric · Flagship</span>
+          <h3>The iX xDrive50</h3>
+          <p>The technology flagship. Dual motors, a lounge built around a curved display, and 630 km of WLTP range.</p>
+          <div class="spec-row">
+            <div><b>523 hp</b><span>Power</span></div>
+            <div><b>630 km</b><span>Range, WLTP up to</span></div>
+            <div><b>4.6 s</b><span>0–100 km/h</span></div>
+          </div>
+          <a class="more-link" href="electric.html">The iX story →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</div>
+
+<section class="photo-band">
+  <img src="img/interior.jpg" alt="BMW cockpit with cognac leather, angled toward the driver" data-parallax>
+  <div class="band-copy">
+    <p class="label" style="color:#Bcd3F2">The cockpit</p>
+    <h2>Everything turns toward the driver.</h2>
+    <p>For fifty years the BMW cockpit has angled its controls at one person. Displays, switches, the road ahead — arranged around the seat doing the work.</p>
+  </div>
+</section>
+
+<div class="dark-band">
+  <div class="wrap">
+    <div class="m-stripe" data-reveal><i></i><i></i><i></i></div>
+    <h2 data-reveal style="margin-top:22px">Electric, at full voltage.</h2>
+    <p data-reveal>The iX adds up to 150 km of range in ten minutes of DC charging (BMW press material). The i4 goes up to 590 km on a charge. The future of the brand is not quieter — it is faster, with better numbers.</p>
+    <div style="margin-top:30px" data-reveal>
+      <a class="btn btn-primary" href="electric.html">Explore electric</a>
+      <a class="btn btn-outline-light" href="experience.html" style="margin-left:12px">Drive one</a>
+    </div>
+  </div>
+</div>
+
+<footer class="ending">
+  <div class="wrap">
+    <div class="giant">DRIVE.</div>
+    <div class="ending-row">
+      <p class="lead">Reading about 530 hp is one thing. <b>The test drive is the argument that ends all arguments.</b> Thirty minutes, your roads, our car.</p>
+      <a class="btn btn-primary" href="experience.html">Book a test drive</a>
+    </div>
+    <div class="site-foot">
+      <div>
+        <div class="foot-links">
+          <a href="models.html">Models</a>
+          <a href="electric.html">Electric</a>
+          <a href="experience.html">Experience</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+        <p class="credits" style="margin-top:18px">Unofficial design study by Wafa for Tiyan Degital — a learning exercise, not affiliated with BMW AG. “BMW”, model names and specifications belong to their owners; figures from BMW press material / Wikipedia, checked 23 Oct 2026. Photography: Wikimedia Commons (CC-licensed) — full credits in credits.json.<br>© <span class="yr">2026</span> Design study. No cars are sold here.</p>
+      </div>
+      <span class="label" style="color:#8A97A5">Multipage build · 23 Oct 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="app.js"></script>
+<script type="module" src="three-scene.js"></script>
+</body>
+</html>
